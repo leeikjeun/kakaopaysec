@@ -26,5 +26,7 @@
  ```
  
  - response
+ ```json
  [{"year":"2018","name":"테드","acctNo":"11111114","sumAmt":28992000},{"year":"2019","name":"에이스","acctNo":"11111112","sumAmt":40998400}]
+ ```
 
