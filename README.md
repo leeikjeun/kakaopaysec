@@ -13,15 +13,34 @@
  - h2 db
  
 ## 빌드 및 실행-방법
+ - git clone(https://github.com/leeikjeun/kakaopaysec.git)
  - gradle build
- - 개발 IDE환경에 lombok환경 설정
-     - 인텔리J(https://gmlwjd9405.github.io/2018/11/29/intellij-lombok.html)
-     - 이클립스(https://dev114.tistory.com/369)
- - TestApplication 실행
-     - 문제1 url : 
-     - 문제2 url : 
-     - 문제3 url : 
-     - 문제4 url : 
+ - TestApplication실행
      
 ##문제해결 방법
- - 테스트1
+
+### 1. 2018,2019년도별 합계 금액이 가장 많은 고객 추출
+ - requset
+ ```
+ http:localhost:8080/solution1
+ ```
+ 
+ - response
+ ```
+  [
+{
+"year": "2018",
+"name": "테드",
+"acctNo": "11111114",
+"sumAmt": 28992000
+},
+{
+"year": "2019",
+"name": "에이스",
+"acctNo": "11111112",
+"sumAmt": 40998400
+}
+]
+ ```
+ 
+
