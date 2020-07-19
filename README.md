@@ -8,7 +8,7 @@
  
 ## 개발 프레임워크 및 데이터베이스
  - 스프링 부트
- - mybatis
+ - data-jdbc
  - lombok
  - h2 db
  
@@ -18,7 +18,8 @@
  - TestApplication실행
      
 ##문제해결 방법
-
+ - repository(DB통신) -> service(비지니스로직) -> controller(url과 서비스 맵핑)
+ 
 ### 1. 2018,2019년도별 합계 금액이 가장 많은 고객 추출
  - requset
  ```
