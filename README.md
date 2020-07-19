@@ -218,7 +218,8 @@
 ### 4. 분당점과 판교점 통폐합하여 판교점으로 이관 지점명을 입력하면 해당 지점에 대한 거래금액 합계를 출력하는 API개발하시오
  - requset
  ```
- http:localhost:8080/solution4?dept_nm=판교점
+ curl -H "Accept: application/json" -H "Content-type: application/json" \
+ -X POST -d '{"dept_nm":"판교점"}' http://localhost:8080/solution4
  ```
 
  - response
