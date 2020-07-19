@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 public class SecController {
@@ -37,10 +35,14 @@ public class SecController {
         return service.questionModel3s();
     }
 
-    @GetMapping(value = "/solution4")
+    @RequestMapping(
+            value = "/solution4",
+            method = RequestMethod.POST,
+            headers = "Accept=application/json"
+    )
     @ResponseBody
-    public QuestionModel3and4 solution4(@RequestParam String dept_nm){
-        return service.questionModel4(dept_nm);
+    public QuestionModel3and4 solution4(@RequestBody HashMap<String,String> map){
+        return service.questionModel4((String) map.get("dept_nm"));
     }
 
     @ExceptionHandler(BizRuntimeException.class)
