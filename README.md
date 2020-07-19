@@ -12,7 +12,7 @@
  - lombok
  - h2 db
  
-## 빌드 및 실행-방법
+## 빌드 및 실행방법
  - git clone(https://github.com/leeikjeun/kakaopaysec.git)
  - gradle build
  - TestApplication실행
