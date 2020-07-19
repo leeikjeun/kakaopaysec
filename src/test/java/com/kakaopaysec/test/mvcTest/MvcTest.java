@@ -15,6 +15,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
@@ -25,12 +26,13 @@ import java.util.Map;
 
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 
 @WebMvcTest
-public class ServiceTest {
+public class MvcTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -108,7 +110,16 @@ public class ServiceTest {
 
         given(service.questionModel4("판교점")).willReturn(questionModel4);
 
-        final ResultActions actions = mockMvc.perform(get("/solution4?dept_nm=판교점"))
+
+        final ResultActions actions = mockMvc.perform(
+
+
+        post("/solution4")
+                        .header("Accept","application/json")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(" { \"dept_nm\": \"판교점\" }")
+                        .accept(MediaType.APPLICATION_JSON)
+                )
                 .andExpect(status().is(HttpStatus.OK.value()))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON));
     }
